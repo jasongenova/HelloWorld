@@ -24,6 +24,7 @@ namespace HelloWorld
                 url = $"https://*:{Environment.GetEnvironmentVariable("PORT")}";
 
             return WebHost.CreateDefaultBuilder(args)
+                .UseKestrel()
                 .UseStartup<Startup>()
                 .UseUrls(url)
                 .Build();
