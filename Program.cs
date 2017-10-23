@@ -21,8 +21,8 @@ namespace HelloWorld
         {
             string url = "http://127.0.0.1:8080";
             if (Environment.GetEnvironmentVariable("PORT") != null)
-                url = $"https://*:{Environment.GetEnvironmentVariable("PORT")}";
-
+                url = $"http://*:{Environment.GetEnvironmentVariable("PORT")}";
+            
             return WebHost.CreateDefaultBuilder(args)
                 .UseKestrel()
                 .UseStartup<Startup>()
